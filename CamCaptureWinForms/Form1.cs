@@ -43,9 +43,10 @@ namespace WindowsFormsApp1
 
 
 
-        private void CaptureCamera()
+        private Task CaptureCamera()
         {
             camera = Task.Run(()=>CaptureCameraCallback());
+            return camera;
         }
 
         private void CaptureCameraCallback()
@@ -61,7 +62,7 @@ namespace WindowsFormsApp1
                 {
 
                     capture.Read(frame);
-                    image = BitmapConverter.ToBitmap(frame);
+                    image = (Bitmap)BitmapConverter.ToBitmap(frame);
                     if (pictureBox1.Image != null)
                     {
                         pictureBox1.Image.Dispose();
