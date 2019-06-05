@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        //TODO: añadir comentarios que expliquen el código
         private void button1_Click(object sender, EventArgs e)
         {
             if (button1.Text.Equals("Tomar Foto"))
